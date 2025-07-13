@@ -15,31 +15,35 @@
           <li><a href="./team.html">Team</a></li>
           <li><a href="./services.html">Services</a></li>
           <li><a href="./resources.html">Resources</a></li>
-          <li><a href="./donate.html">Donate</a></li>
+          <li><a href="./donate.html" aria-current="page">Donate</a></li>
           <li><a href="./contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
-      <aside>
-        <img
-          src="https://img.freepik.com/premium-vector/compass-globe-world-global-expedition-travel-navigation-logo-design-vector_493994-220.jpg"
-          alt="International Compass logo"
-        />
-      </aside>
-      <article>
-        <h1>Donate</h1>
-        <p>
-          We welcome donations! Your generosity helps us reach and support more
-          students and families.
-        </p>
-        <p>Ways to give:</p>
-        <ul>
-          <li>CashApp: <strong>$InternationalCompass</strong></li>
-          <li>Zelle: <strong>donate@internationalcompass.org</strong></li>
-        </ul>
-      </article>
+      <section class="main-content">
+        <aside>
+          <img
+            src="https://img.freepik.com/premium-vector/compass-globe-world-global-expedition-travel-navigation-logo-design-vector_493994-220.jpg"
+            alt="International Compass logo"
+          />
+        </aside>
+        <article class="text-card">
+          <h1>Donate</h1>
+          <p>
+            We welcome donations! Your generosity helps us reach and support
+            more students and families.
+          </p>
+          <p>Ways to give:</p>
+          <ul>
+            <li>CashApp: <strong>$InternationalCompass</strong></li>
+            <li>Zelle: <strong>donate@internationalcompass.org</strong></li>
+          </ul>
+        </article>
+      </section>
     </main>
+
     <footer>
       <nav>
         <ul>
@@ -48,7 +52,7 @@
           <li><a href="team.html">Team</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="resources.html">Resources</a></li>
-          <li><a href="donate.html">Donate</a></li>
+          <li><a href="donate.html" aria-current="page">Donate</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -60,6 +64,8 @@
       navLinks.forEach((link) => {
         if (link.getAttribute("href") === currentPage) {
           link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
         }
       });
     </script>
