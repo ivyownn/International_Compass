@@ -3,32 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>About Us | International Compass</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="about.html" aria-current="page">About Us</a></li>
+          <li><a href="team.html">Teams & Church Branches</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="donate.html">Donate</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search..." />
+          <button id="searchBtn">Search</button>
+        </div>
       </nav>
     </header>
 
+    <section class="logo-section">
+      <img
+        src="LogoCompass.png"
+        alt="International Compass logo"
+        class="logo small-logo"
+      />
+      <div class="logo-text-group">
+        <h1 class="logo-text">International Compass</h1>
+        <p class="tagline">Your Journey. Our Support. His Love.</p>
+      </div>
+    </section>
+
+    <div class="banner">
+      <img src="" alt="banner image" />
+    </div>
+
+    <aside class="sidebar-aside">
+      <img src="" alt="aside image" />
+    </aside>
+
     <main>
       <section class="main-content">
-        <aside>
-          <img
-            src="https://img.freepik.com/premium-vector/compass-globe-world-global-expedition-travel-navigation-logo-design-vector_493994-220.jpg"
-            alt="International Compass logo"
-          />
-        </aside>
         <article class="text-card">
           <h1>About International Compass</h1>
           <p>
@@ -36,7 +54,7 @@
             International, created to support international students as they
             transition to life in the United States. Our mission is to connect
             students with essential resources, mentorship, and a caring church
-            family—helping them settle in smoothly and thrive in a new
+            family – helping them settle in smoothly and thrive in a new
             environment.
           </p>
           <p>
@@ -50,12 +68,17 @@
           <p>
             Through International Compass, we extend that mission by offering
             both practical and spiritual support to international students.
-            Whether it’s airport pickups, cultural guidance, or one-on-one
+            Whether it is airport pickups, cultural guidance, or one-on-one
             mentoring, our goal is to walk alongside students with faith and
-            friendship. We share this vision with our sister churches—First
+            friendship. We share this vision with our sister churches — First
             Love, Laikos International Church, and the American Missionary
-            Church (AMC)—which serve communities across the U.S. and Canada,
+            Church (AMC) — which serve communities across the U.S. and Canada,
             united in our commitment to love, purpose, and excellence.
+          </p>
+
+          <p>
+            We focus on spiritual, academic, and cultural needs, helping you
+            find a true home away from home.
           </p>
         </article>
       </section>
@@ -64,9 +87,9 @@
     <footer>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About Us</a></li>
+          <li><a href="team.html">Teams & Church Branches</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="donate.html">Donate</a></li>
@@ -74,5 +97,8 @@
         </ul>
       </nav>
     </footer>
+
+    <script src="js/images.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

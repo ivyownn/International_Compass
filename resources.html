@@ -3,74 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Resources | International Compass</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="navbar">
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About Us</a></li>
-          <li><a href="./team.html">Team</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./resources.html" aria-current="page">Resources</a></li>
-          <li><a href="./donate.html">Donate</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="team.html">Teams & Church Branches</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html" aria-current="page">Resources</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search..." />
+          <button id="searchBtn">Search</button>
+        </div>
       </nav>
     </header>
 
+    <section class="logo-section">
+      <img
+        src="LogoCompass.png"
+        alt="International Compass logo"
+        class="logo small-logo"
+      />
+      <div class="logo-text-group">
+        <h1 class="logo-text">International Compass</h1>
+        <p class="tagline">Your Journey. Our Support. His Love.</p>
+      </div>
+    </section>
+
+    <div class="banner">
+      <img src="" alt="banner image" />
+    </div>
+
+    <aside class="sidebar-aside">
+      <img src="" alt="aside image" />
+    </aside>
+
     <main>
       <section class="main-content">
-        <aside>
-          <img
-            src="https://img.freepik.com/premium-vector/compass-globe-world-global-expedition-travel-navigation-logo-design-vector_493994-220.jpg"
-            alt="International Compass logo"
-          />
-        </aside>
         <article class="text-card">
-          <h1>Helpful Resources for International Students</h1>
-          <p>
-            Here are some resources to help you navigate life as an
-            international student in the U.S.—from housing to health, and
-            everything in between.
-          </p>
-
-          <h2>Campus Support</h2>
+          <h1>Helpful Resources</h1>
+          <h3>Campus Support</h3>
           <ul>
             <li>
               <a
                 href="https://www.uscis.gov/working-in-the-united-states/students-and-exchange-visitors"
                 target="_blank"
-                >F-1 Visa & Employment (USCIS)</a
+                >F-1 Visa & Employment</a
               >
             </li>
-            <li>
-              <a href="#">Your University’s International Student Office</a>
-            </li>
-            <li><a href="#">Student Counseling & Wellness Center</a></li>
+            <li><a href="#">University International Office</a></li>
+            <li><a href="#">Counseling & Wellness Center</a></li>
           </ul>
 
-          <h2>Local Essentials</h2>
+          <h3>Local Essentials</h3>
           <ul>
-            <li><a href="#">Affordable Housing Near Campus</a></li>
-            <li><a href="#">Grocery Stores with International Foods</a></li>
-            <li>
-              <a href="#"
-                >Transportation Apps & Services (Uber, Lyft, Transit)</a
-              >
-            </li>
+            <li><a href="#">Affordable Housing</a></li>
+            <li><a href="#">International Grocery Stores</a></li>
+            <li><a href="#">Transportation Apps</a></li>
           </ul>
 
-          <h2>Community & Faith</h2>
+          <h3>Community & Faith</h3>
           <ul>
             <li><a href="#">Find a Local Revival International Church</a></li>
             <li><a href="#">Join a Student Bible Study</a></li>
             <li><a href="#">Mentorship & Friendship Network</a></li>
           </ul>
 
-          <h2>Language & Tools</h2>
+          <h3>Language & Tools</h3>
           <ul>
             <li>
               <a href="https://translate.google.com" target="_blank"
@@ -80,15 +86,8 @@
             <li>
               <a href="https://maps.google.com" target="_blank">Google Maps</a>
             </li>
-            <li><a href="#">Free English Conversation Clubs</a></li>
+            <li><a href="#">English Conversation Clubs</a></li>
           </ul>
-
-          <h2>Need Help?</h2>
-          <p>
-            If you're looking for personalized help,
-            <a href="./contact.html">reach out to us</a> or ask about our
-            mentorship program!
-          </p>
         </article>
       </section>
     </main>
@@ -96,15 +95,18 @@
     <footer>
       <nav>
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About Us</a></li>
-          <li><a href="./team.html">Team</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./resources.html" aria-current="page">Resources</a></li>
-          <li><a href="./donate.html">Donate</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="team.html">Teams & Church Branches</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html" aria-current="page">Resources</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </footer>
+
+    <script src="js/images.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

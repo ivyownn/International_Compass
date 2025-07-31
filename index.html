@@ -3,69 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="International Compass helps international students in the U.S. connect with mentors, church families, and helpful resources."
-    />
-    <link rel="stylesheet" href="styles.css" type="text/css" />
-    <title>International Compass</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Home | International Compass</title>
   </head>
   <body>
+    <!-- Header Nav -->
     <header>
-      <nav>
+      <nav class="navbar">
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About Us</a></li>
-          <li><a href="./team.html">Team</a></li>
-          <li><a href="./services.html">Services</a></li>
-          <li><a href="./resources.html">Resources</a></li>
-          <li><a href="./donate.html">Donate</a></li>
-          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="team.html">Teams & Church Branches</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search..." />
+          <button id="searchBtn">Search</button>
+        </div>
       </nav>
     </header>
 
+    <!-- Logo Section -->
+    <section class="logo-section">
+      <img
+        src="LogoCompass.png"
+        alt="International Compass logo"
+        class="logo small-logo"
+      />
+      <div class="logo-text-group">
+        <h1 class="logo-text">International Compass</h1>
+        <p class="tagline">Your Journey. Our Support. His Love.</p>
+      </div>
+    </section>
+
+    <!-- Banner -->
+    <div class="banner">
+      <img src="" alt="banner image" />
+    </div>
+
+    <!-- Sidebar Aside -->
+    <aside class="sidebar-aside">
+      <img src="" alt="aside image" />
+    </aside>
+
+    <!-- Main Content -->
     <main>
       <section class="main-content">
-        <aside>
-          <img
-            src="https://img.freepik.com/premium-vector/compass-globe-world-global-expedition-travel-navigation-logo-design-vector_493994-220.jpg"
-            alt="Logo of International Compass with globe and compass"
-          />
-        </aside>
         <article class="text-card">
-          <img
-            src="https://img.freepik.com/premium-photo/vintage-still-life-with-compass-map-usa-flag_1003277-613.jpg"
-            class="banner"
-            alt="Compass on a U.S. map with a vintage style"
-          />
-          <h1>Welcome to International Compass—your journey starts here!</h1>
+          <h1>Welcome to International Compass</h1>
+          <h2>Your journey starts here!</h2>
           <p class="sub-title">
             Moving to a new country is exciting, but we know it can bring
             challenges, too. That’s why International Compass is more than just
             a resource—it’s a supportive community ready to help you every step
-            of the way. Need guidance getting from the airport? Looking for
-            friends who feel like family? Or maybe you’re curious about
-            navigating campus life? You’re in the right place! Dive in and
-            discover a world of resources, connections, and insider tips
-            designed to make your transition smoother and more memorable.
+            of the way. Do you need guidance getting from the airport? Are you
+            looking for friends who feel like family? Or if you’re just curious
+            about navigating campus life, you’re in the right place!
+          </p>
+          <p>
+            Dive in and discover a world of resources, connections, and insider
+            tips designed to make your transition smoother and more memorable.
             Together, let’s make your college experience in the U.S.
-            unforgettable! Learn more about how
+            unforgettable!
+          </p>
+          <p>
+            Learn more about how
             <a href="about.html">International Compass</a> is here to guide and
             support you as you embark on this exciting journey.
-            <a href="about.html">Discover our mission and values</a> to see how
-            we empower students like you to thrive!
           </p>
         </article>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="team.html">Team</a></li>
+          <li><a href="team.html">Teams & Church Branches</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="donate.html">Donate</a></li>
@@ -73,5 +92,9 @@
         </ul>
       </nav>
     </footer>
+
+    <!-- JS -->
+    <script src="js/images.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>
