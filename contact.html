@@ -7,6 +7,7 @@
     <title>Contact | International Compass</title>
   </head>
   <body>
+    <!-- Header Nav -->
     <header>
       <nav class="navbar">
         <ul>
@@ -25,45 +26,55 @@
       </nav>
     </header>
 
+    <!-- Logo Section -->
     <section class="logo-section">
       <img
         src="LogoCompass.png"
         alt="International Compass logo"
         class="logo small-logo"
       />
-      <div class="logo-text-group">
-        <h1 class="logo-text">International Compass</h1>
-        <p class="tagline">Your Journey. Our Support. His Love.</p>
-      </div>
+      <h1 class="logo-text">International Compass</h1>
+      <p class="tagline">Your Journey. Our Support. His Love.</p>
     </section>
 
+    <!-- Banner -->
     <div class="banner">
       <img src="" alt="banner image" />
     </div>
 
+    <!-- Sidebar Aside -->
     <aside class="sidebar-aside">
       <img src="" alt="aside image" />
     </aside>
 
+    <!-- Main Content -->
     <main>
       <section class="main-content">
-        <article class="text-card">
-          <h1>Contact Us</h1>
-          <form id="contact-form">
-            <input type="text" id="name" placeholder="Your Name" required />
-            <input type="email" id="email" placeholder="Your Email" required />
-            <textarea
-              id="message"
-              placeholder="Your Message"
-              required
-            ></textarea>
-            <button type="submit">Send</button>
+        <article class="text-card contact-card">
+          <h2>Contact Us</h2>
+          <p>
+            We’d love to hear from you! Whether you need help, have questions,
+            or want to partner with us — send us a message.
+          </p>
+
+          <form id="contact-form" class="styled-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+            <div id="form-message"></div>
           </form>
-          <p id="form-message"></p>
         </article>
       </section>
     </main>
 
+    <!-- Footer -->
     <footer>
       <nav>
         <ul>
@@ -78,6 +89,7 @@
       </nav>
     </footer>
 
+    <!-- JS -->
     <script src="js/images.js"></script>
     <script src="js/search.js"></script>
     <script src="js/contact.js"></script>
