@@ -1,6 +1,6 @@
-// images.js
-const accessKey = "YOUR_UNSPLASH_KEY";
+// images.js (now calls backend instead of Unsplash directly)
 
+// Page-specific keywords for Unsplash
 const pageKeywords = {
   index: "international students campus",
   about: "community connection support",
@@ -11,46 +11,46 @@ const pageKeywords = {
   team: "church community gathering",
 };
 
+// Detect current page (index, about, etc.)
 function getPageName() {
   const path = window.location.pathname;
   const page = path.substring(path.lastIndexOf("/") + 1) || "index.html";
-  return page.split(".")[0];
+  return page.split(".")[0]; // remove .html
 }
 
+// Fetch banner image (through backend)
 function loadBanner(keyword) {
   fetch(
-    `https://api.unsplash.com/photos/random?query=${encodeURIComponent(
-      keyword
-    )}&orientation=landscape&client_id=${accessKey}`
+    `/unsplash-image?query=${encodeURIComponent(keyword)}&orientation=landscape`
   )
     .then((res) => res.json())
     .then((data) => {
-      const bannerDiv = document.querySelector(".banner img");
-      if (bannerDiv && data?.urls?.regular) {
-        bannerDiv.src = data.urls.regular;
-        bannerDiv.alt = keyword + " banner";
+      const bannerImg = document.querySelector(".banner img");
+      if (bannerImg && data.url) {
+        bannerImg.src = data.url;
+        bannerImg.alt = keyword + " banner";
       }
     })
-    .catch((err) => console.warn("Unsplash banner fetch failed", err));
+    .catch((err) => console.warn("Banner fetch failed", err));
 }
 
+// Fetch aside image (through backend)
 function loadAside(keyword) {
   fetch(
-    `https://api.unsplash.com/photos/random?query=${encodeURIComponent(
-      keyword
-    )}&orientation=squarish&client_id=${accessKey}`
+    `/unsplash-image?query=${encodeURIComponent(keyword)}&orientation=squarish`
   )
     .then((res) => res.json())
     .then((data) => {
       const asideImg = document.querySelector(".sidebar-aside img");
-      if (asideImg && data?.urls?.small) {
-        asideImg.src = data.urls.small;
+      if (asideImg && data.url) {
+        asideImg.src = data.url;
         asideImg.alt = keyword + " aside";
       }
     })
-    .catch((err) => console.warn("Unsplash aside fetch failed", err));
+    .catch((err) => console.warn("Aside fetch failed", err));
 }
 
+// Run after DOM loads
 document.addEventListener("DOMContentLoaded", () => {
   const page = getPageName();
   const keyword = pageKeywords[page] || "international students";
