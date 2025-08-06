@@ -1,4 +1,4 @@
-// images.js (now calls backend instead of Unsplash directly)
+// images.js (fetches images via backend proxy)
 
 // Page-specific keywords for Unsplash
 const pageKeywords = {
@@ -11,49 +11,52 @@ const pageKeywords = {
   team: "church community gathering",
 };
 
-// Detect current page (index, about, etc.)
+// Get current page name
 function getPageName() {
   const path = window.location.pathname;
   const page = path.substring(path.lastIndexOf("/") + 1) || "index.html";
-  return page.split(".")[0]; // remove .html
+  return page.split(".")[0]; // strip .html
 }
 
-// Fetch banner image (through backend)
-function loadBanner(keyword) {
-  fetch(
-    `/unsplash-image?query=${encodeURIComponent(keyword)}&orientation=landscape`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      const bannerImg = document.querySelector(".banner img");
-      if (bannerImg && data.url) {
-        bannerImg.src = data.url;
-        bannerImg.alt = keyword + " banner";
-      }
-    })
-    .catch((err) => console.warn("Banner fetch failed", err));
+// Load banner image via backend
+async function loadBanner(keyword) {
+  try {
+    const res = await fetch(
+      `/unsplash-image?query=${encodeURIComponent(
+        keyword
+      )}&orientation=landscape`
+    );
+    const data = await res.json();
+    const bannerImg = document.querySelector(".banner img");
+    if (bannerImg && data.url) {
+      bannerImg.src = data.url;
+      bannerImg.alt = `${keyword} banner`;
+    }
+  } catch (err) {
+    console.warn("Banner fetch failed", err);
+  }
 }
 
-// Fetch aside image (through backend)
-function loadAside(keyword) {
-  fetch(
-    `/unsplash-image?query=${encodeURIComponent(keyword)}&orientation=squarish`
-  )
-    .then((res) => res.json())
-    .then((data) => {
-      const asideImg = document.querySelector(".sidebar-aside img");
-      if (asideImg && data.url) {
-        asideImg.src = data.url;
-        asideImg.alt = keyword + " aside";
-      }
-    })
-    .catch((err) => console.warn("Aside fetch failed", err));
-}
+// If you have an aside image, uncomment and ensure aside markup has an <img>
+// async function loadAside(keyword) {
+//   try {
+//     const res = await fetch(
+//       `/unsplash-image?query=${encodeURIComponent(keyword)}&orientation=squarish`
+//     );
+//     const data = await res.json();
+//     const asideImg = document.querySelector(".sidebar-aside img");
+//     if (asideImg && data.url) {
+//       asideImg.src = data.url;
+//       asideImg.alt = `${keyword} aside`;
+//     }
+//   } catch (err) {
+//     console.warn("Aside fetch failed", err);
+//   }
+// }
 
-// Run after DOM loads
 document.addEventListener("DOMContentLoaded", () => {
   const page = getPageName();
   const keyword = pageKeywords[page] || "international students";
   loadBanner(keyword);
-  loadAside("compass globe travel");
+  // loadAside("compass globe travel"); // only if aside has an image
 });
