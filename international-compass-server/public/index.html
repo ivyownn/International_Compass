@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Contact | International Compass</title>
+    <title>Home | International Compass</title>
   </head>
   <body>
     <!-- Header Nav -->
     <header>
       <nav class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="team.html">Teams & Church Branches</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="donate.html">Donate</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="search-bar">
           <input type="text" id="searchInput" placeholder="Search..." />
@@ -33,8 +33,10 @@
         alt="International Compass logo"
         class="logo small-logo"
       />
-      <h1 class="logo-text">International Compass</h1>
-      <p class="tagline">Your Journey. Our Support. His Love.</p>
+      <div class="logo-text-group">
+        <h1 class="logo-text">International Compass</h1>
+        <p class="tagline">From Arrival to Belonging.</p>
+      </div>
     </section>
 
     <!-- Banner -->
@@ -50,26 +52,28 @@
     <!-- Main Content -->
     <main>
       <section class="main-content">
-        <article class="text-card contact-card">
-          <h2>Contact Us</h2>
-          <p>
-            We’d love to hear from you! Whether you need help, have questions,
-            or want to partner with us — send us a message.
+        <article class="text-card">
+          <h1>Welcome to International Compass</h1>
+          <h2>Your journey starts here!</h2>
+          <p class="sub-title">
+            Moving to a new country is exciting, but we know it can bring
+            challenges, too. That’s why International Compass is more than just
+            a resource—it’s a supportive community ready to help you every step
+            of the way. Do you need guidance getting from the airport? Are you
+            looking for friends who feel like family? Or if you’re just curious
+            about navigating campus life, you’re in the right place!
           </p>
-
-          <form id="contact-form" class="styled-form">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
-
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="btn-primary">Send Message</button>
-            <div id="form-message"></div>
-          </form>
+          <p>
+            Dive in and discover a world of resources, connections, and insider
+            tips designed to make your transition smoother and more memorable.
+            Together, let’s make your college experience in the U.S.
+            unforgettable!
+          </p>
+          <p>
+            Learn more about how
+            <a href="about.html">International Compass</a> is here to guide and
+            support you as you embark on this exciting journey.
+          </p>
         </article>
       </section>
     </main>
@@ -78,13 +82,13 @@
     <footer>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="team.html">Teams & Church Branches</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="donate.html">Donate</a></li>
-          <li><a href="contact.html" aria-current="page">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </footer>
@@ -92,7 +96,6 @@
     <!-- JS -->
     <script src="js/images.js"></script>
     <script src="js/search.js"></script>
-    <script src="js/contact.js"></script>
     <script src="js/countdown.js"></script>
   </body>
 </html>

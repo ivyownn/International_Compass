@@ -3,27 +3,35 @@ import dotenv from "dotenv";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import fetch from "node-fetch";
+import path from "path";
+import { fileURLToPath } from "url";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+// --- Paths for static serving ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// --- Middleware ---
 app.use(cors());
 app.use(express.json());
+
+// --- Serve static files from "public" ---
+app.use(express.static(path.join(__dirname, "public")));
 
 // === Contact Form Email Route ===
 app.post("/send-email", async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Basic field validation
   if (!name || !email || !message) {
     return res
       .status(400)
       .json({ success: false, message: "All fields are required." });
   }
 
-  // Basic email format check
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     return res
@@ -36,7 +44,7 @@ app.post("/send-email", async (req, res) => {
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // Use App Password for Gmail
+        pass: process.env.EMAIL_PASS, // Use Gmail App Password
       },
     });
 
@@ -99,4 +107,5 @@ app.get("/google-maps-key", (req, res) => {
   res.json({ key });
 });
 
+// --- Server Listen ---
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
