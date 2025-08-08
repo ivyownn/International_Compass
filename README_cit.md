@@ -68,7 +68,7 @@ Integration with translation and language detection APIs to support multilingual
 
 ## Project Structure
 
-````
+```
 /public
   ├── index.html
   ├── about.html
@@ -90,16 +90,16 @@ server.js
 .env
 README.md
 
----
+```
 
-## Run the Project Locally
+## How to Run the Project Locally
 
-### 1. Clone the Repository
+### 1. Clone This Repository
 
 ```bash
-git clone https://github.com/your-username/international-compass.git
+git clone https://github.com/ivyownn/international-compass.git
 cd international-compass
-````
+```
 
 ### 2. Install Dependencies
 
@@ -134,7 +134,7 @@ Visit: `http://localhost:5001`
 - **Marker Clusterer**: Add `@googlemaps/markerclusterer` for clustering map markers.
 - **Async Error Handling**: Wrap async Express routes with error-handling middleware to avoid repetitive try/catch.
 - **Improved Nodemailer Config**: Use Gmail OAuth2 or app passwords for more secure email sending.
-- **AI Assistance**: A.I. was used to help to structure content and JS refactoring API Base
+- **AI Assistance**: AI assistance was leveraged to validate code during development challenges and to refactor the JavaScript API base, incorporating features such as marker clustering for improved functionality.
 
 ---
 
