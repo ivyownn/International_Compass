@@ -163,6 +163,10 @@ body {
   color: #b03060;
 }
 
+.spaced {
+  margin-top: 70px;
+}
+
 /* Contact Page Styles */
 .contact-card {
   max-width: 600px;
