@@ -1,16 +1,24 @@
 // Handle local vs production API
 const API_BASE =
-  window.location.hostname === "localhost" ? "http://localhost:5001" : "";
+  window.location.hostname === "localhost"
+    ? "http://localhost:5001"
+    : "https://international-compass.onrender.com";
 
 // Load Google Maps Script using backend key
 function loadGoogleMaps() {
   fetch(`${API_BASE}/google-maps-key`)
     .then((res) => res.json())
     .then((data) => {
+      if (!data.key) {
+        console.error("Google Maps API key missing from backend");
+        return;
+      }
       const script = document.createElement("script");
       script.src = `https://maps.googleapis.com/maps/api/js?key=${data.key}&callback=initMap`;
       script.async = true;
+      script.defer = true; // safer async loading
       document.head.appendChild(script);
+      console.log("Google Maps script requested from backend key");
     })
     .catch((err) => console.error("Failed to load Google Maps API key", err));
 }
@@ -26,14 +34,18 @@ function initMap() {
 
   // Load locations from JSON file
   fetch("locations.json")
-    .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok)
+        throw new Error(`Failed to fetch locations.json: ${res.status}`);
+      return res.json();
+    })
     .then((locations) => {
       let activeInfoWindow = null;
 
       const markers = locations.map((location) => {
         const marker = new google.maps.Marker({
           position: location.position,
-          map: map,
+          map,
           title: location.city,
         });
 
@@ -44,16 +56,4 @@ function initMap() {
                     </div>`,
         });
 
-        marker.addListener("click", () => {
-          if (activeInfoWindow) activeInfoWindow.close();
-          infoWindow.open(map, marker);
-          activeInfoWindow = infoWindow;
-        });
-
-        return marker;
-      });
-
-      new markerClusterer.MarkerClusterer({ map, markers });
-    })
-    .catch((err) => console.error("Failed to load locations.json", err));
-}
+        marker.addListener("clic

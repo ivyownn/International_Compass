@@ -1,5 +1,3 @@
-// images.js (fetch banner only - no aside images)
-
 // Page-specific keywords for Unsplash
 const pageKeywords = {
   index: "international students campus",
@@ -22,13 +20,7 @@ function getPageName() {
 const API_BASE =
   window.location.hostname === "localhost"
     ? "http://localhost:5001"
-    : "https://your-production-domain.com"; // update with real production URL
-
-fetch(
-  `${API_BASE}/unsplash-image?query=${encodeURIComponent(
-    keyword
-  )}&orientation=landscape`
-);
+    : "https://international-compass.onrender.com"; // your Render backend
 
 // Fetch banner image (through backend)
 function loadBanner(keyword) {
@@ -42,7 +34,10 @@ function loadBanner(keyword) {
       const bannerImg = document.querySelector(".banner img");
       if (bannerImg && data.url) {
         bannerImg.src = data.url;
-        bannerImg.alt = keyword + " banner";
+        bannerImg.alt = `${keyword} banner`;
+        console.log("Banner loaded for:", keyword);
+      } else {
+        console.warn("No banner found for:", keyword);
       }
     })
     .catch((err) => console.warn("Banner fetch failed", err));

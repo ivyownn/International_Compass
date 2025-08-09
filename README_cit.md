@@ -151,4 +151,5 @@ Revival International is a growing network of churches across the U.S. committed
 
 ## Get Involved
 
-We welcome men
+We welcome mentors, church members, developers, and students to join this effort.  
+Contact us via the **Contact** page on the website.
