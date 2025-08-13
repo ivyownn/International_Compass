@@ -1,3 +1,7 @@
 node_modules/
 .env
-international-compass-server/International_Compass.git/test-clean/
+
+# Temporary or test folders
+/test-clean/
+
+*.log

@@ -201,4 +201,9 @@ node server.js or node international-compass-server/server.js
 
 ### About Revival International
 
-Revival International is a growing network of churches across the U.S. committed to serving stud
+Revival International is a growing network of churches across the U.S. committed to serving students, families, and communities through gospel-centered hospitality, prayer, and mentorship. This project is one way we express our love and care for the nations God brings to our doorstep.
+
+## Get Involved
+
+We welcome mentors, church members, developers, and students to join this effort.  
+Contact us via the **Contact** page on the website.
