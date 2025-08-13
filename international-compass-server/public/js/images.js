@@ -1,12 +1,12 @@
-// Page-specific keywords for Unsplash
+// Keywords for each page -> banner topic
 const pageKeywords = {
-  index: "international students campus",
-  about: "community connection support",
-  services: "volunteer help guidance",
-  resources: "student resources books laptop",
-  donate: "charity giving donation",
-  contact: "communication support team",
-  team: "church community gathering",
+  index: "happy international students campus learning smiling",
+  about: "community connection support friendship teamwork",
+  services: "help guidance volunteering positive impact",
+  resources: "students books laptops learning classroom",
+  donate: "happy students families giving support smiling",
+  contact: "communication support team friendly",
+  team: "church community gathering happy diverse",
 };
 
 // Detect current page (index, about, etc.)
