@@ -86,8 +86,10 @@ Integration with translation and language detection APIs to support multilingual
   │    └── locations.json
   └── css/
        └── styles.css
-server.js
-.env
+/international-compass-server
+  ├── server.js
+  └── .env
+.gitignore
 README.md
 
 ```
@@ -109,7 +111,7 @@ npm install
 
 ### 3. Environment Variables
 
-Create a `.env` file and add:
+Create a .env file in the backend folder (international-compass-server/.env) and add:
 
 ```
 PORT=5001
@@ -119,6 +121,29 @@ UNSPLASH_ACCESS_KEY=your_unsplash_key
 GOOGLE_MAPS_KEY=your_google_maps_key
 ```
 
+## API Keys Setup
+
+- Google Maps
+
+1. Go to Google Cloud Console.
+2. Create / select a project.
+3. Enable APIs: Maps JavaScript API
+4. Create an API key.
+5. Restrict the key:
+
+- Application restriction: HTTP referrers.
+- Allowed:
+  http://localhost/_
+  http://localhost:5001/_
+  https://your-deployed-site.onrender.com/*
+- API restriction: Restrict to "Maps JavaScript API".
+
+* Unsplash
+
+1. Go to Unsplash Developer.
+2. Create a new app to get your Access Key.
+3. Add it to .env as UNSPLASH_ACCESS_KEY.
+
 ### 4. Start the Server
 
 ```bash
@@ -127,29 +152,53 @@ npm start
 
 Visit: `http://localhost:5001`
 
+### Run backend server:
+
+node server.js or node international-compass-server/server.js
+
+## Deployment (Render)
+
+### Steps to deploy
+
+1. Push repo to GitHub.
+2. Create a new Web Service on Render:
+
+- Connect your GitHub repo.
+- Set build command: npm install
+- Set start command: node server.js or node international-compass-server/server.js
+- Set environment variables on Render dashboard (same as .env).
+
+3. Deploy.
+4. Frontend will fetch images and Google Maps API keys securely via backend proxy routes.
+
+### Frontend Behavior
+
+- images.js dynamically loads banner images for each page from Unsplash via backend proxy.
+- maps.js loads Google Maps only on team.html and fetches Google Maps API key securely from the backend.
+- Map markers are loaded from locations.json in the public/js/ folder.
+- Both scripts automatically detect local vs production base URLs.
+
 ---
 
 ## Developer Notes
 
+- Google Maps API key is kept secret by fetching it from backend.
 - **Marker Clusterer**: Add `@googlemaps/markerclusterer` for clustering map markers.
+- Add search/filter functionality for church locations on the map.
+- Display detailed info windows with church photos or schedules.
 - **Async Error Handling**: Wrap async Express routes with error-handling middleware to avoid repetitive try/catch.
-- **Improved Nodemailer Config**: Use Gmail OAuth2 or app passwords for more secure email sending.
-- **AI Assistance**: AI assistance was leveraged to validate code during development challenges and to refactor the JavaScript API base, incorporating features such as marker clustering for improved functionality.
+- **Improved Nodemailer Config**: Use Gmail OAuth2 (sign in with Google) or app passwords for more secure email sending.
+- **AI Assistance**: AI assistance was leveraged to validate code during development challenges and to refactor the JavaScript API base, incorporating features such as marker clustering for improved functionality and to fix Google maps loading issues.
 
 ---
 
 ### Known Limitations
 
 - Free APIs may have rate limits
-- No authentication/login system (planned for future)
+- No authentication/login system (planned for the future)
 - Some features (community forum, language translation) are planned but not yet implemented
 - Requires regular content updates and moderator involvement
 
 ### About Revival International
 
-Revival International is a growing network of churches across the U.S. committed to serving students, families, and communities through gospel-centered hospitality, prayer, and mentorship. This project is one way we express our love and care for the nations God brings to our doorstep.
-
-## Get Involved
-
-We welcome mentors, church members, developers, and students to join this effort.  
-Contact us via the **Contact** page on the website.
+Revival International is a growing network of churches across the U.S. committed to serving stud
